@@ -10,86 +10,56 @@
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Repl.it_logo.svg/220px-Repl.it_logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .nav-link,
-        .hamburger div {
-            color: white;
-        }
-
-        .social-media a {
-            color: white;
-            margin: 0 15px;
-            font-size: 2rem;
-            text-decoration: none;
-        }
-
-        .social-media a:hover {
-            color: #00bfff;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
 </head>
 
 <body>
+    <div class="mouse-shadow"></div>
     <div class="container">
-        <!-- Header -->
-        <header>
-            <nav>
-                <ul class="nav-bar">
-                    <div class="bg"></div>
-                    <li><a class="nav-link active" href="#home">Home</a></li>
-                    <li><a class="nav-link" href="#portfolio">Portfólio Técnico</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </header>
-
         <main>
             <!-- Home Section -->
             <div id="home">
                 <section class="intro">
-                    <h3>Geraldo Alves.<hr></h3>
-                    <p>SRE.</p>
-                    <p>DevOps.</p>
-                    <p>Cloud AWS.</p>
-                    <div class="social-media">
-                        <a href="https://www.linkedin.com/in/geraldoalves/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/GeraldoTI" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.youtube.com/@techinfracenter" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <img src="img/1727463096188.jpeg" alt="">
+                    <div class="conteudo-home">
+                        <h1>Geraldo Alves.</h1>
+                        <div class="skils">
+                            <p>SRE.</p>
+                            <p>DevOps.</p>
+                            <p>Cloud AWS.</p>
+                        </div>
+                        <hr>
+                        <span>
+                            Com mais de 10 anos de experiência na área de Tecnologia da Informação, desenvolvi minha carreira como Analista de TI e Técnico em Data Center On Premise em empresas focadas em Assinatura Digital, Indústrias e Serviços Médico-Hospitalares, Bancos: atuando em infraestruturas críticas com mais de 15 mil pontos de rede.
+                            <br>
+                            Com foco em resultados, sou especializado em ambientes de missão crítica, trazendo soluções que garantem escalabilidade, alta disponibilidade e conformidade com os mais altos padrões de segurança.
+                        </span>
+                        <div class="social-media">
+                            <a href="https://www.linkedin.com/in/geraldoalves/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/GeraldoTI" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.youtube.com/@techinfracenter" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </section>
             </div>
-
-            <!-- Portfolio Section -->
-            <div id="portfolio">
-                <h3>Portfólio Técnico.<hr></h3>
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/in/geraldoalves/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/GeraldoTI" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.youtube.com/@techinfracenter" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
         </main>
-
-        <footer class="copyright">© 2024
-            <a href="https://www.linkedin.com/in/geraldoalves/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <footer class="copyright">
+            <p>&copy; <span id="year"></span>Geraldo Alves</p>
         </footer>
     </div>
-    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById("year").textContent = currentYear;
+
+        // Função que faz a sombra do mouse
+        const mouseShadow = document.querySelector('.mouse-shadow');
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.pageX - mouseShadow.offsetWidth / 2;
+            const mouseY = e.pageY - mouseShadow.offsetHeight / 2;
+
+            mouseShadow.style.left = `${mouseX}px`;
+            mouseShadow.style.top = `${mouseY}px`;
+        });
+    </script>
 </body>
 
 </html>
